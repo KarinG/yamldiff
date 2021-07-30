@@ -1,0 +1,519 @@
+contact_pagebreak:
+  '#type': wizard_page
+  '#form_key': contact_pagebreak
+  '#title': 'Contact Information'
+  '#webform': leader_expense_submission
+  '#webform_id': leader_expense_submission--contact_pagebreak
+  '#webform_key': contact_pagebreak
+  '#webform_parent_key': ''
+  '#webform_parent_flexbox': false
+  '#webform_depth': 0
+  '#webform_children': {  }
+  '#webform_multiple': false
+  '#webform_composite': false
+  '#webform_parents':
+    - contact_pagebreak
+  '#admin_title': 'Contact Information'
+  '#webform_plugin_id': webform_wizard_page
+  processed_text:
+    '#type': processed_text
+    '#title': Introduction
+    '#text': |
+      <p><strong>Group Virtual Account Linked Reimbursements for your Leader and Group expenses</strong> can be requested by completing this form and attaching your receipts, uploading them individually as the form directs. You can upload a scan or a photograph of the receipt, as long as it is legible. Proper receipting must show you paid for the articles, with applicable tax information. If you have any difficulties submitting online, please email&nbsp; <a href="mailto:office@lllc.ca">office@lllc.ca</a> or call 289-660-5900. Please keep the original documents, or a copy if you are mailing them, in your files as a back-up.</p>
+
+      <p><strong>What Group expenses can you claim for?</strong> Categories are listed in the LLLC Guidebook, page 91: "Group funds should be used for regular LLL activities that benefit mothers and babies. A Group’s assets do not belong to the Leaders or the members of the Group, but to La Leche League Canada. It is essential that money should be used to carry out LLLC’s purpose. This may include: · Rent (for meeting space, permits), Office Expenses (paper, postage envelopes, file folder, library books), Food (snacks, coffee, water), Leader Education (registration fees), Travel (parking, toll) *for Mileage (Kms) to be reimbursed please use this <a href="/leaders/leader-mileage-km-reimbursement-form">form</a> *, Promotion (fliers, paid advertising, tradeshow).<br />
+      *Please note: For small Group printing and copying needs, LLLC Groups can take advantage of LLLC's business discount with Staples for all in-store or online orders. Be sure to present (or input if ordering online) our Business Discount program number 8151902478 to receive an automatic 20% discount on your purchase.</p>
+
+      <p><strong>*Please note reimbursements sent via EFT must be equal or greater than $10.</strong></p>
+    '#webform': leader_expense_submission
+    '#webform_id': leader_expense_submission--processed_text
+    '#webform_key': processed_text
+    '#webform_parent_key': contact_pagebreak
+    '#webform_parent_flexbox': false
+    '#webform_depth': 1
+    '#webform_children': {  }
+    '#webform_multiple': false
+    '#webform_composite': false
+    '#webform_parents':
+      - contact_pagebreak
+      - processed_text
+    '#webform_plugin_id': processed_text
+    '#format': html
+    '#admin_title': Introduction
+  civicrm_1_contact_1_fieldset_fieldset:
+    '#type': fieldset
+    '#title': 'LLLC Group'
+    '#form_key': civicrm_1_contact_1_fieldset_fieldset
+    '#webform': leader_expense_submission
+    '#webform_id': leader_expense_submission--civicrm_1_contact_1_fieldset_fieldset
+    '#webform_key': civicrm_1_contact_1_fieldset_fieldset
+    '#webform_parent_key': contact_pagebreak
+    '#webform_parent_flexbox': false
+    '#webform_depth': 1
+    '#webform_children': {  }
+    '#webform_multiple': false
+    '#webform_composite': false
+    '#webform_parents':
+      - contact_pagebreak
+      - civicrm_1_contact_1_fieldset_fieldset
+    '#admin_title': 'LLLC Group'
+    '#webform_plugin_id': fieldset
+    civicrm_1_contact_1_contact_existing:
+      '#type': civicrm_contact
+      '#title': 'Existing Contact'
+      '#description': 'Expenses will be applied to this Groups&#39; Virtual Account'
+      '#description_display': before
+      '#widget': select
+      '#search_prompt': '- Choose existing -'
+      '#none_prompt': '- None Found -'
+      '#show_hidden_contact': 1
+      '#results_display':
+        organization_name: organization_name
+      '#admin_title': 'Existing Contact'
+      '#contact_sub_type': lllc_group
+      '#contact_type': organization
+      '#form_key': civicrm_1_contact_1_contact_existing
+      '#parent': civicrm_1_contact_1_fieldset_fieldset
+      '#extra': {  }
+      '#webform': leader_expense_submission
+      '#webform_id': leader_expense_submission--civicrm_1_contact_1_contact_existing
+      '#webform_key': civicrm_1_contact_1_contact_existing
+      '#webform_parent_key': civicrm_1_contact_1_fieldset_fieldset
+      '#webform_parent_flexbox': false
+      '#webform_depth': 2
+      '#webform_children': {  }
+      '#webform_multiple': false
+      '#webform_composite': false
+      '#webform_parents':
+        - contact_pagebreak
+        - civicrm_1_contact_1_fieldset_fieldset
+        - civicrm_1_contact_1_contact_existing
+      '#webform_plugin_id': civicrm_contact
+    civicrm_1_contact_1_cg15_custom_104:
+      '#type': number
+      '#title': 'Current Balance'
+      '#field_prefix': $
+      '#readonly': true
+      '#admin_title': 'Current Balance'
+      '#data_type': Money
+      '#extra':
+        field_prefix: $
+        point: .
+        separator: ','
+        decimals: 2
+        min: 0
+      '#civicrm_condition':
+        andor: or
+        action: show
+        rules:
+          contact_contact_sub_type:
+            values:
+              - LLLC_Group
+      '#form_key': civicrm_1_contact_1_cg15_custom_104
+      '#parent': civicrm_1_contact_1_cg15_fieldset
+      '#webform': leader_expense_submission
+      '#webform_id': leader_expense_submission--civicrm_1_contact_1_cg15_custom_104
+      '#webform_key': civicrm_1_contact_1_cg15_custom_104
+      '#webform_parent_key': civicrm_1_contact_1_fieldset_fieldset
+      '#webform_parent_flexbox': false
+      '#webform_depth': 2
+      '#webform_children': {  }
+      '#webform_multiple': false
+      '#webform_composite': false
+      '#webform_parents':
+        - contact_pagebreak
+        - civicrm_1_contact_1_fieldset_fieldset
+        - civicrm_1_contact_1_cg15_custom_104
+      '#webform_plugin_id': number
+    civicrm_1_contact_1_email_email:
+      '#type': email
+      '#title': Email
+      '#autocomplete': ''
+      '#prepopulate': true
+      '#admin_title': Email
+      '#form_key': civicrm_1_contact_1_email_email
+      '#extra':
+        width: 20
+      '#parent': civicrm_1_contact_1_fieldset_fieldset
+      '#webform': leader_expense_submission
+      '#webform_id': leader_expense_submission--civicrm_1_contact_1_email_email
+      '#webform_key': civicrm_1_contact_1_email_email
+      '#webform_parent_key': civicrm_1_contact_1_fieldset_fieldset
+      '#webform_parent_flexbox': false
+      '#webform_depth': 2
+      '#webform_children': {  }
+      '#webform_multiple': false
+      '#webform_composite': false
+      '#webform_parents':
+        - contact_pagebreak
+        - civicrm_1_contact_1_fieldset_fieldset
+        - civicrm_1_contact_1_email_email
+      '#webform_plugin_id': email
+  civicrm_2_contact_1_fieldset_fieldset:
+    '#type': fieldset
+    '#title': 'LLLC Leader'
+    '#admin_title': 'Contact 2'
+    '#form_key': civicrm_2_contact_1_fieldset_fieldset
+    '#webform': leader_expense_submission
+    '#webform_id': leader_expense_submission--civicrm_2_contact_1_fieldset_fieldset
+    '#webform_key': civicrm_2_contact_1_fieldset_fieldset
+    '#webform_parent_key': contact_pagebreak
+    '#webform_parent_flexbox': false
+    '#webform_depth': 1
+    '#webform_children': {  }
+    '#webform_multiple': false
+    '#webform_composite': false
+    '#webform_parents':
+      - contact_pagebreak
+      - civicrm_2_contact_1_fieldset_fieldset
+    '#webform_plugin_id': fieldset
+    civicrm_2_contact_1_email_email:
+      '#type': email
+      '#title': 'You are logged in as:'
+      '#prepopulate': true
+      '#default_value': '[current-user:mail]'
+      '#admin_title': Email
+      '#form_key': civicrm_2_contact_1_email_email
+      '#extra':
+        width: 20
+      '#parent': civicrm_2_contact_1_fieldset_fieldset
+      '#webform': leader_expense_submission
+      '#webform_id': leader_expense_submission--civicrm_2_contact_1_email_email
+      '#webform_key': civicrm_2_contact_1_email_email
+      '#webform_parent_key': civicrm_2_contact_1_fieldset_fieldset
+      '#webform_parent_flexbox': false
+      '#webform_depth': 2
+      '#webform_children': {  }
+      '#webform_multiple': false
+      '#webform_composite': false
+      '#webform_parents':
+        - contact_pagebreak
+        - civicrm_2_contact_1_fieldset_fieldset
+        - civicrm_2_contact_1_email_email
+      '#webform_plugin_id': email
+    civicrm_1_contribution_1_cg19_custom_121:
+      '#type': civicrm_options
+      '#title': 'Preferred payment'
+      '#civicrm_live_options': 0
+      '#options':
+        cheque: cheque
+        EFT: EFT
+      '#admin_title': 'Preferred payment'
+      '#form_key': civicrm_1_contribution_1_cg19_custom_121
+      '#parent': contribution_pagebreak
+      '#webform': leader_expense_submission
+      '#webform_id': leader_expense_submission--civicrm_1_contribution_1_cg19_custom_121
+      '#webform_key': civicrm_1_contribution_1_cg19_custom_121
+      '#webform_parent_key': civicrm_2_contact_1_fieldset_fieldset
+      '#webform_parent_flexbox': false
+      '#webform_depth': 2
+      '#webform_children': {  }
+      '#webform_multiple': false
+      '#webform_composite': false
+      '#webform_parents':
+        - contact_pagebreak
+        - civicrm_2_contact_1_fieldset_fieldset
+        - civicrm_1_contribution_1_cg19_custom_121
+      '#webform_plugin_id': civicrm_options
+    civicrm_2_contact_1_address_state_province_id:
+      '#type': textfield
+      '#extra':
+        maxlength: 5
+        width: 4
+      '#data_type': state_province_abbr
+      '#form_key': civicrm_2_contact_1_address_state_province_id
+      '#parent': civicrm_2_contact_1_fieldset_fieldset
+      '#title': State/Province
+      '#webform': leader_expense_submission
+      '#webform_id': leader_expense_submission--civicrm_2_contact_1_address_state_province_id
+      '#webform_key': civicrm_2_contact_1_address_state_province_id
+      '#webform_parent_key': civicrm_2_contact_1_fieldset_fieldset
+      '#webform_parent_flexbox': false
+      '#webform_depth': 2
+      '#webform_children': {  }
+      '#webform_multiple': false
+      '#webform_composite': false
+      '#webform_parents':
+        - contact_pagebreak
+        - civicrm_2_contact_1_fieldset_fieldset
+        - civicrm_2_contact_1_address_state_province_id
+      '#admin_title': State/Province
+      '#webform_plugin_id': textfield
+    i_acknowledge:
+      '#type': checkbox
+      '#title': 'I acknowledge that the expenses listed below are exclusively for LLLC purposes'
+      '#webform': leader_expense_submission
+      '#webform_id': leader_expense_submission--i_acknowledge
+      '#webform_key': i_acknowledge
+      '#webform_parent_key': civicrm_2_contact_1_fieldset_fieldset
+      '#webform_parent_flexbox': false
+      '#webform_depth': 2
+      '#webform_children': {  }
+      '#webform_multiple': false
+      '#webform_composite': false
+      '#webform_parents':
+        - contact_pagebreak
+        - civicrm_2_contact_1_fieldset_fieldset
+        - i_acknowledge
+      '#admin_title': 'I acknowledge that the expenses listed below are exclusively for LLLC purposes'
+      '#webform_plugin_id': checkbox
+    expense_category:
+      '#type': select
+      '#title': 'Expense Category'
+      '#description': 'Category that best describes expenses on this receipt'
+      '#options':
+        'Rent (for meeting space, permits)': 'Rent (for meeting space, permits)'
+        'Office Expenses (paper, postage, envelopes, file folders, library books)': 'Office Expenses (paper, postage, envelopes, file folders, library books)'
+        'Food (snacks, coffee, water)': 'Food (snacks, coffee, water)'
+        'Leader Education (registration fees)': 'Leader Education (registration fees)'
+        'Travel (parking, toll)': 'Travel (parking, toll)'
+        'Promotion (fliers, paid advertising, tradeshow)': 'Promotion (fliers, paid advertising, tradeshow)'
+        'Subscription (online virtual meetings, etc)': 'Subscription (online virtual meetings, etc)'
+      '#webform': leader_expense_submission
+      '#webform_id': leader_expense_submission--expense_category
+      '#webform_key': expense_category
+      '#webform_parent_key': civicrm_2_contact_1_fieldset_fieldset
+      '#webform_parent_flexbox': false
+      '#webform_depth': 2
+      '#webform_children': {  }
+      '#webform_multiple': false
+      '#webform_composite': false
+      '#webform_parents':
+        - contact_pagebreak
+        - civicrm_2_contact_1_fieldset_fieldset
+        - expense_category
+      '#admin_title': 'Expense Category'
+      '#webform_plugin_id': select
+    covid_19_related_expense:
+      '#type': radios
+      '#title': 'COVID-19 related expense'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+      '#webform': leader_expense_submission
+      '#webform_id': leader_expense_submission--covid_19_related_expense
+      '#webform_key': covid_19_related_expense
+      '#webform_parent_key': civicrm_2_contact_1_fieldset_fieldset
+      '#webform_parent_flexbox': false
+      '#webform_depth': 2
+      '#webform_children': {  }
+      '#webform_multiple': false
+      '#webform_composite': false
+      '#webform_parents':
+        - contact_pagebreak
+        - civicrm_2_contact_1_fieldset_fieldset
+        - covid_19_related_expense
+      '#admin_title': 'COVID-19 related expense'
+      '#webform_plugin_id': radios
+    i_have_had_this_expense_approved_by_the_area_coordinator_of_lead:
+      '#type': radios
+      '#title': 'I have had this expense approved by the Area Coordinator of Leaders'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+      '#webform': leader_expense_submission
+      '#webform_id': leader_expense_submission--i_have_had_this_expense_approved_by_the_area_coordinator_of_lead
+      '#webform_key': i_have_had_this_expense_approved_by_the_area_coordinator_of_lead
+      '#webform_parent_key': civicrm_2_contact_1_fieldset_fieldset
+      '#webform_parent_flexbox': false
+      '#webform_depth': 2
+      '#webform_children': {  }
+      '#webform_multiple': false
+      '#webform_composite': false
+      '#webform_parents':
+        - contact_pagebreak
+        - civicrm_2_contact_1_fieldset_fieldset
+        - i_have_had_this_expense_approved_by_the_area_coordinator_of_lead
+      '#admin_title': 'I have had this expense approved by the Area Coordinator of Leaders'
+      '#webform_plugin_id': radios
+    i_have_had_this_expense_approved_by_co_leaders_if_applicable_:
+      '#type': radios
+      '#title': 'I have had this expense approved by Co-Leaders (if applicable)'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+        N/A: N/A
+      '#admin_title': 'I have had this expense approved by Co-Leaders (if applicable)'
+      '#webform': leader_expense_submission
+      '#webform_id': leader_expense_submission--i_have_had_this_expense_approved_by_co_leaders_if_applicable_
+      '#webform_key': i_have_had_this_expense_approved_by_co_leaders_if_applicable_
+      '#webform_parent_key': civicrm_2_contact_1_fieldset_fieldset
+      '#webform_parent_flexbox': false
+      '#webform_depth': 2
+      '#webform_children': {  }
+      '#webform_multiple': false
+      '#webform_composite': false
+      '#webform_parents':
+        - contact_pagebreak
+        - civicrm_2_contact_1_fieldset_fieldset
+        - i_have_had_this_expense_approved_by_co_leaders_if_applicable_
+      '#webform_plugin_id': radios
+contribution_pagebreak:
+  '#type': wizard_page
+  '#form_key': contribution_pagebreak
+  '#title': Payment
+  '#webform': leader_expense_submission
+  '#webform_id': leader_expense_submission--contribution_pagebreak
+  '#webform_key': contribution_pagebreak
+  '#webform_parent_key': ''
+  '#webform_parent_flexbox': false
+  '#webform_depth': 0
+  '#webform_children': {  }
+  '#webform_multiple': false
+  '#webform_composite': false
+  '#webform_parents':
+    - contribution_pagebreak
+  '#admin_title': Payment
+  '#webform_plugin_id': webform_wizard_page
+  receipt_details:
+    '#type': fieldset
+    '#title': 'Receipt Details'
+    '#webform': leader_expense_submission
+    '#webform_id': leader_expense_submission--receipt_details
+    '#webform_key': receipt_details
+    '#webform_parent_key': contribution_pagebreak
+    '#webform_parent_flexbox': false
+    '#webform_depth': 1
+    '#webform_children': {  }
+    '#webform_multiple': false
+    '#webform_composite': false
+    '#webform_parents':
+      - contribution_pagebreak
+      - receipt_details
+    '#admin_title': 'Receipt Details'
+    '#webform_plugin_id': fieldset
+    civicrm_1_contribution_1_contribution_total_amount:
+      '#type': number
+      '#title': 'Receipt Amount (Tax Included)'
+      '#field_prefix': $
+      '#admin_title': 'Contribution Amount'
+      '#parent': contribution_pagebreak
+      '#data_type': Money
+      '#extra':
+        field_prefix: $
+        point: .
+        separator: ','
+        decimals: 2
+        min: 0
+      '#form_key': civicrm_1_contribution_1_contribution_total_amount
+      '#webform': leader_expense_submission
+      '#webform_id': leader_expense_submission--civicrm_1_contribution_1_contribution_total_amount
+      '#webform_key': civicrm_1_contribution_1_contribution_total_amount
+      '#webform_parent_key': receipt_details
+      '#webform_parent_flexbox': false
+      '#webform_depth': 2
+      '#webform_children': {  }
+      '#webform_multiple': false
+      '#webform_composite': false
+      '#webform_parents':
+        - contribution_pagebreak
+        - receipt_details
+        - civicrm_1_contribution_1_contribution_total_amount
+      '#webform_plugin_id': number
+    civicrm_1_contribution_1_cg19_custom_120:
+      '#type': number
+      '#title': 'Total Sales Tax'
+      '#field_prefix': $
+      '#admin_title': 'Combined GST/HST'
+      '#data_type': Money
+      '#extra':
+        field_prefix: $
+        point: .
+        separator: ','
+        decimals: 2
+        min: 0
+      '#form_key': civicrm_1_contribution_1_cg19_custom_120
+      '#parent': contribution_pagebreak
+      '#webform': leader_expense_submission
+      '#webform_id': leader_expense_submission--civicrm_1_contribution_1_cg19_custom_120
+      '#webform_key': civicrm_1_contribution_1_cg19_custom_120
+      '#webform_parent_key': receipt_details
+      '#webform_parent_flexbox': false
+      '#webform_depth': 2
+      '#webform_children': {  }
+      '#webform_multiple': false
+      '#webform_composite': false
+      '#webform_parents':
+        - contribution_pagebreak
+        - receipt_details
+        - civicrm_1_contribution_1_cg19_custom_120
+      '#webform_plugin_id': number
+    file_upload:
+      '#type': managed_file
+      '#title': 'Upload Receipt'
+      '#admin_title': 'File Upload'
+      '#max_filesize': '5'
+      '#file_extensions': 'gif jpg png pdf'
+      '#webform': leader_expense_submission
+      '#webform_id': leader_expense_submission--file_upload
+      '#webform_key': file_upload
+      '#webform_parent_key': receipt_details
+      '#webform_parent_flexbox': false
+      '#webform_depth': 2
+      '#webform_children': {  }
+      '#webform_multiple': false
+      '#webform_composite': false
+      '#webform_parents':
+        - contribution_pagebreak
+        - receipt_details
+        - file_upload
+      '#webform_plugin_id': managed_file
+    upload_receipt_2:
+      '#type': managed_file
+      '#title': 'Upload Receipt 2'
+      '#admin_title': 'File Upload'
+      '#max_filesize': '5'
+      '#file_extensions': 'gif jpg png pdf'
+      '#webform': leader_expense_submission
+      '#webform_id': leader_expense_submission--upload_receipt_2
+      '#webform_key': upload_receipt_2
+      '#webform_parent_key': receipt_details
+      '#webform_parent_flexbox': false
+      '#webform_depth': 2
+      '#webform_children': {  }
+      '#webform_multiple': false
+      '#webform_composite': false
+      '#webform_parents':
+        - contribution_pagebreak
+        - receipt_details
+        - upload_receipt_2
+      '#webform_plugin_id': managed_file
+    upload_receipt_3:
+      '#type': managed_file
+      '#title': 'Upload Receipt 3'
+      '#admin_title': 'File Upload'
+      '#max_filesize': '5'
+      '#file_extensions': 'gif jpg png pdf'
+      '#webform': leader_expense_submission
+      '#webform_id': leader_expense_submission--upload_receipt_3
+      '#webform_key': upload_receipt_3
+      '#webform_parent_key': receipt_details
+      '#webform_parent_flexbox': false
+      '#webform_depth': 2
+      '#webform_children': {  }
+      '#webform_multiple': false
+      '#webform_composite': false
+      '#webform_parents':
+        - contribution_pagebreak
+        - receipt_details
+        - upload_receipt_3
+      '#webform_plugin_id': managed_file
+    description:
+      '#type': textarea
+      '#title': Description
+      '#description': 'Description of Expenses'
+      '#webform': leader_expense_submission
+      '#webform_id': leader_expense_submission--description
+      '#webform_key': description
+      '#webform_parent_key': receipt_details
+      '#webform_parent_flexbox': false
+      '#webform_depth': 2
+      '#webform_children': {  }
+      '#webform_multiple': false
+      '#webform_composite': false
+      '#webform_parents':
+        - contribution_pagebreak
+        - receipt_details
+        - description
+      '#admin_title': Description
+      '#webform_plugin_id': textarea
